@@ -48,15 +48,15 @@ const sideBarContent = [
     icon: assets.receipt,
     activeIcon: assets.receiptActive,
     init: "/admin/receipt",
-    firstRoute: "/admin/receipt/receipt-management",
+    firstRoute: "/admin/receipt/receipt-catagory-management",
     subTitles: [
       {
         label: "영수증 목록",
-        route:"/admin/receipt/receipt-management/view-receipt-details",
+        route:"/admin/receipt/receipt-catagory-management/view-receipt-details",
       },
       {
         label: "영수증 카테고리 관리",
-        route:"/admin/receipt/receipt-management/receipt-catagory-management",
+        route:"/admin/receipt/receipt-catagory-management",
       },
     ],
   },
