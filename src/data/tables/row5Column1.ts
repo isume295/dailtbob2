@@ -1,11 +1,12 @@
 const demo = [
   {
     number: 1,
-    category: "유아도서",
-    title: "제목 텍스트 영역",
-    author: "닉네임",
-    createdDate: "YYYY-MM-DD",
-    viewDetails: "상세보기",
+    storeName: "가게명 입니다.",
+    point: "5,000",
+    industry: "업종",
+    registrationDate: "YYYY-MM-DD ",
+    id: "abc@naver.com",
+    classification:"분류"
   },
 ];
 
