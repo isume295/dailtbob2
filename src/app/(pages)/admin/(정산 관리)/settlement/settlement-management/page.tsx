@@ -1,19 +1,10 @@
-"use client";
-import CommonHeader from "@/components/CommonHeader";
-import DropDown from "@/components/DropDown";
-import InputNoLabel from "@/components/InputNoLable";
-import row9Column1 from "@/data/tables/row9Column1";
-import {
-  Button,
-  Pagination,
-  Table,
-  TableBody,
-  TableCell,
-  TableColumn,
-  TableHeader,
-  TableRow,
-} from "@nextui-org/react";
-import React, { useState } from "react";
+'use client'
+import CommonHeader from '@/components/CommonHeader'
+import DropDown from '@/components/DropDown'
+import InputNoLabel from '@/components/InputNoLable'
+import row9Column1 from '@/data/tables/row9Column1'
+import { Button, Pagination, Table, TableBody, TableCell, TableColumn, TableHeader, TableRow } from '@nextui-org/react'
+import React, { useState } from 'react'
 
 const page = () => {
   const dropDownOptions = [
@@ -21,7 +12,7 @@ const page = () => {
     { key: "option2", label: "전체 회원" },
     { key: "option3", label: "전체 회원" },
   ];
-  const defaultDropDown = dropDownOptions[0].key;
+  const defaultDropDown=dropDownOptions[0].key
   const viewOptions = [
     { key: "10", label: "10개씩 보기" },
     { key: "20", label: "20개씩 보기" },
@@ -44,115 +35,113 @@ const page = () => {
 
   return (
     <section>
-      <CommonHeader title="상품 관리 " />
-      <header className=" bg-white py-10 px-10 rounded-[20px] ">
-        <div className="flex items-center gap-16">
-          <div className="flex items-center gap-7 w-full">
-            <p className="min-w-[72px]">상품명</p>
-            <div className="w-full">
-              <InputNoLabel placeholder="상품명" />
-            </div>
+      <CommonHeader title='상품 관리 '/>
+      <header className= " bg-white py-10 px-10 rounded-[20px] ">
+        <div className='flex items-center gap-16'>
+          <div className='flex items-center gap-7 w-full'>
+          <p className='min-w-[72px]'>상품명</p>
+          <div className='w-full'>
+            <InputNoLabel placeholder='상품명'/>
           </div>
-          <div className="flex items-center gap-7">
-            <p className="min-w-[72px]">상태</p>
-            <div className="flex items-center gap-7 w-full">
-              <DropDown
-                options={dropDownOptions}
-                defaultSelectedKeys={defaultDropDown}
-                selectStyles="w-[400px]"
-              />
-              <Button className="py-3 px-5 bg-mainBlack text-white">
-                검색
-              </Button>
-            </div>
           </div>
+          <div className='flex items-center gap-7'>
+          <p className='min-w-[72px]'>상태</p>
+          <div className='flex items-center gap-7 w-full'>
+            <DropDown options={dropDownOptions} defaultSelectedKeys={defaultDropDown} selectStyles='w-[400px]'/>
+            <Button className='py-3 px-5 bg-mainBlack text-white'>검색</Button>
+          </div>
+          </div>
+          
         </div>
-        <div className="flex items-center gap-8 mt-5">
-          <div className="flex items-center gap-7 w-full">
-            <p className="min-w-[72px]">등록일</p>
-            <div className="w-full">
-              <InputNoLabel type="date" />
-            </div>
+        <div className='flex items-center gap-8 mt-5'>
+          <div className='flex items-center gap-7 w-full'>
+          <p className='min-w-[72px]'>등록일</p>
+          <div className='w-full'>
+            <InputNoLabel type='date' />
           </div>
-          <div className="w-full">
-            <InputNoLabel type="date" />
           </div>
+          <div className='w-full'>
+          <InputNoLabel type='date'/>
+          </div>
+          
         </div>
-      </header>
-      <article className="mt-8">
-        <Table
-          aria-label="Data Table"
-          shadow="none"
-          classNames={{
-            th: "font-normal text-[16px] bg-[#EEEEEE] text-[#A1A9A3] h-[48px] text-center",
-            td: "px-6 text-center font-normal text-base text-[#363941]",
-          }}
-          bottomContent={
-            <div className="flex w-full justify-center mt-8">
-              <Pagination
-                isCompact
-                showControls
-                showShadow
-                color="secondary"
-                page={page}
-                total={pages}
-                onChange={setPage}
-              />
-            </div>
-          }
-        >
-          <TableHeader>
-            <TableColumn className="w-[10%]">고객아이디</TableColumn>
-            <TableColumn className="w-[10%]">상품코드</TableColumn>
-            <TableColumn className="w-[10%]">상품명</TableColumn>
-            <TableColumn className="w-[10%]">원가</TableColumn>
-            <TableColumn className="w-[25%]">판매가</TableColumn>
-            <TableColumn className="w-[10%]">판매구분</TableColumn>
-            <TableColumn className="w-[10%]">수량</TableColumn>
-            <TableColumn className="w-[10%]">판매금액</TableColumn>
-            <TableColumn className="w-[10%]">취소금액</TableColumn>
-            <TableColumn className="w-[10%]">갱신일시</TableColumn>
-          </TableHeader>
-          <TableBody>
-            {items.map((row) => (
-              <TableRow key={row.customerId} className="border-b-1">
-                <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">
-                  {row.customerId}
-                </TableCell>
-                <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">
-                  {row.productCode}
-                </TableCell>
-                <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">
-                  {row.productName}
-                </TableCell>
-                <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">
-                  {row.cost}
-                </TableCell>
-                <TableCell className="truncate max-w-[150px] overflow-hidden text-ellipsis whitespace-nowrap">
-                  {row.salePrice}
-                </TableCell>
-                <TableCell className="truncate max-w-[250px] overflow-hidden text-ellipsis whitespace-nowrap">
-                  {row.salesCatagory}
-                </TableCell>
-                <TableCell className="truncate max-w-[250px] overflow-hidden text-ellipsis whitespace-nowrap">
-                  {row.quantity}
-                </TableCell>
-                <TableCell className="truncate max-w-[250px] overflow-hidden text-ellipsis whitespace-nowrap">
-                  {row.salesAmount}
-                </TableCell>
-                <TableCell className="truncate max-w-[250px] overflow-hidden text-ellipsis whitespace-nowrap">
-                  {row.cancellationAMount}
-                </TableCell>
-                <TableCell className="truncate max-w-[250px] overflow-hidden text-ellipsis whitespace-nowrap">
-                  {row.upDate}
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+        </header>
+        <article className="mt-8">
+      <Table
+  aria-label="Data Table"
+  shadow="none"
+  classNames={{
+    th: "font-normal text-[16px] bg-[#EEEEEE] text-[#A1A9A3] h-[48px] text-center",
+    td: "px-6 text-center font-normal text-base text-[#363941]",
+  }}
+  bottomContent={
+    <div className="flex w-full justify-center mt-8">
+      <Pagination
+        isCompact
+        showControls
+        showShadow
+        color="secondary"
+        page={page}
+        total={pages}
+        onChange={setPage}
+      />
+    </div>
+  }
+>
+  <TableHeader>
+    <TableColumn className="w-[10%]">고객아이디</TableColumn>
+    <TableColumn className="w-[10%]">상품코드</TableColumn>
+    <TableColumn className="w-[10%]">상품명</TableColumn>
+    <TableColumn className="w-[10%]">원가</TableColumn>
+    <TableColumn className="w-[25%]">판매가</TableColumn>
+    <TableColumn className="w-[10%]">판매구분</TableColumn>
+    <TableColumn className="w-[10%]">수량</TableColumn>
+    <TableColumn className="w-[10%]">판매금액</TableColumn>
+    <TableColumn className="w-[10%]">취소금액</TableColumn>
+    <TableColumn className="w-[10%]">갱신일시</TableColumn>
+  </TableHeader>
+  <TableBody>
+    {items.map((row) => (
+      <TableRow key={row.customerId} className="border-b-1">
+        <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">
+          {row.customerId}
+        </TableCell>
+        <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">
+          {row.productCode}
+        </TableCell>
+        <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">
+          {row.productName}
+        </TableCell>
+        <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">
+          {row.cost}
+        </TableCell>
+        <TableCell className="truncate max-w-[150px] overflow-hidden text-ellipsis whitespace-nowrap">
+          {row.salePrice}
+        </TableCell>
+        <TableCell className="truncate max-w-[250px] overflow-hidden text-ellipsis whitespace-nowrap">
+          {row.salesCatagory}
+        </TableCell>
+        <TableCell className="truncate max-w-[250px] overflow-hidden text-ellipsis whitespace-nowrap">
+          {row.quantity}
+        </TableCell>
+        <TableCell className="truncate max-w-[250px] overflow-hidden text-ellipsis whitespace-nowrap">
+          {row.salesAmount}
+        </TableCell>
+        <TableCell className="truncate max-w-[250px] overflow-hidden text-ellipsis whitespace-nowrap">
+          {row.cancellationAMount}
+        </TableCell>
+        <TableCell className="truncate max-w-[250px] overflow-hidden text-ellipsis whitespace-nowrap">
+          {row.upDate}
+        </TableCell>
+      </TableRow>
+    ))}
+  </TableBody>
+</Table>
+
       </article>
-    </section>
-  );
-};
+        </section>
+  )
+}
+
 
 export default page;
