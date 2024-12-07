@@ -3,6 +3,7 @@ import CommonHeader from '@/components/CommonHeader'
 import DropDownWithLabel from '@/components/DropDownWithLabel'
 import InputWithLabel from '@/components/InputWithLabel'
 import { Button } from '@nextui-org/react'
+import Link from 'next/link'
 import React from 'react'
 
 const page = () => {
@@ -59,7 +60,8 @@ const page = () => {
           </div>
       </header>
       <div className='flex items-center justify-center mt-11'>
-        <Button className='py-3 px-7 bg-mainBlack text-white'>확인</Button>
+        <Button className='py-3 px-7 bg-mainBlack text-white'>
+            <Link href='/admin/Administrator/Administrator-information-management/1/1'>n확인</Link></Button>
       </div>
       </section>
   )

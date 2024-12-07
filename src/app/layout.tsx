@@ -4,8 +4,8 @@ import "./globals.css";
 import { NextUIProvider } from "@nextui-org/react";
 
 export const metadata: Metadata = {
-  title: "NexaCode - Great Meat",
-  description: "Created by Nexacode - Great Meat",
+  title: "NexaCode",
+  description: "Created by Nexacode",
 };
 
 export default function RootLayout({

@@ -9,6 +9,7 @@ import dynamic from "next/dynamic";
 import { Button } from "@nextui-org/react";
 import DropDown from "@/components/DropDown";
 import DropDownWithLabel from "@/components/DropDownWithLabel";
+import assets from "@/assets";
 
 const JoditEditor = dynamic(() => import("jodit-react"), { ssr: false });
 
@@ -37,16 +38,16 @@ const page = () => {
         <div className="flex items-center gap-8">
           <p className="font-bold text-base min-w-[82px] text-grayLight">썸네일</p>
           <div className="flex items-center gap-8">
-            <div className="py-3 px-4 flex flex-col gap-2 rounded-[10px] border-1 border-lightBorder">
+            <button className="py-3 px-4 flex flex-col gap-2 rounded-[10px] border-1 border-lightBorder">
               <Image
-                src=""
+                src={assets.importImage}
                 alt="An example image"
                 width={20}
                 height={15}
                 priority
               />
               <p className="text-sm font-semibold text-grayLight">추가</p>
-            </div>
+            </button>
             <div className="w-[203px] h-[143px] bg-whiteRed rounded-[10px]"></div>
           </div>
         </div>

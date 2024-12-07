@@ -22,6 +22,8 @@ const config: Config = {
         secondaryBlack:"#353A46",
         thirdBlack:"#323232",
         mainBlue: "#007AFF",
+        secondBlue:"#42A8FD",
+        whiteBlue:"#E0F1FF",
         mainWhite: "#ffffff",
         mainPurple: "#9388FE",
         mainGray: "#A1A9A3",

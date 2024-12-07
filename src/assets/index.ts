@@ -19,11 +19,12 @@ import gameActive from "@/assets/icons/sidebar/gameActive.svg";
 import notification from "@/assets/icons/sidebar/notification.svg";
 import notificationActive from "@/assets/icons/sidebar/notificationActive.svg";
 
-
 import tableBodyImage1 from "@/assets/images/table-body-image-1.png";
 import tableBodyImage2 from "@/assets/images/table-body-image-2.png";
 import tableBodyImage3 from "@/assets/images/table-body-image-3.png";
 import largeImageDemo from "@/assets/images/large-image-demo.png";
+
+import importImage from "@/assets/icons/photo.svg"
 
 const assets = {
   member,
@@ -52,6 +53,9 @@ const assets = {
   tableBodyImage3,
 
   largeImageDemo,
+
+
+  importImage
 };
 
 export default assets;
