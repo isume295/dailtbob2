@@ -154,9 +154,8 @@ const page = () => {
                   <TableCell>{row.name}</TableCell>
                   <TableCell className="text-mainBlue underline underline-offset-1">
                     <Link href="/admin/member-points-and-entry-tickets/member-points-and-entry-tickets-management/1">
-                    {row.pointsBalance}
+                      {row.pointsBalance}
                     </Link>
-                  
                   </TableCell>
                   <TableCell className="text-mainBlue underline underline-offset-1">
                     {row.RemainingEntry}

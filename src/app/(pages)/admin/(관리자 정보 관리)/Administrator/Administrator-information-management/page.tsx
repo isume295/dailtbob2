@@ -72,7 +72,7 @@ const page = () => {
               styles="w-[70px] "
               mainStyles="bg-transparent border border-grayBorder rounded-[5px]"
             />
-            <Button className="py-3 px-8 rounded-md bg-mainBlack text-white"
+            <Button className="py-3 px-10 rounded-md bg-mainBlack text-white"
             
             >
               <Link className='text-white' href='/admin/Administrator/Administrator-information-management/1'>

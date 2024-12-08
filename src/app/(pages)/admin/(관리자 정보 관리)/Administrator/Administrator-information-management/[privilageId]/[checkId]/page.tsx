@@ -1,6 +1,6 @@
 'use client'
 import CommonHeader from '@/components/CommonHeader'
-import { Checkbox } from '@nextui-org/react'
+import { Button, Checkbox } from '@nextui-org/react'
 import { group } from 'console'
 import React, { useState } from 'react'
 
@@ -43,7 +43,8 @@ const page = () => {
     <section>
     <CommonHeader title='상품 관리 '/>
     <div className="flex items-center mt-10 gap-10">
-  <div
+        <div>
+        <div
     className="flex flex-col items-center py-10 px-10
      bg-white w-[392px] h-[756px] rounded-[20px]"
   >
@@ -65,7 +66,11 @@ const page = () => {
       </div>
     ))}
   </div>
-  <div className="py-10 px-10 bg-white w-[392px] h-[756px] rounded-[20px]">
+  <div className='flex items-center justify-end mt-5'>
+    <Button className='py-3 px-5 bg-[#353A46] text-white'>추가</Button>
+  </div>
+        </div>
+ <div> <div className="py-10 px-10 bg-white w-[392px] h-[756px] rounded-[20px]">
   <div className="border-t-1 border-b-1 border-[#42A8FD] bo px-32 py-3 bg-[#E0F1FF]">
       <p className=" text-base font-normal text-[#42A8FD] whitespace-nowrap">접근 허용</p>
     </div>
@@ -92,6 +97,11 @@ const page = () => {
     ))}
 
   </div>
+  <div className='flex items-center justify-end mt-5'>
+    <Button className='py-3 px-5 bg-[#353A46] text-white'>설정</Button>
+  </div>
+  </div>
+ 
 </div>
 
     </section>
