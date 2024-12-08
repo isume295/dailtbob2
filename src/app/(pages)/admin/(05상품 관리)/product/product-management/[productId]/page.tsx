@@ -60,7 +60,7 @@ const page = () => {
           <div className="flex items-center gap-8">
             <div className="py-3 px-4 flex flex-col gap-2 rounded-[10px] border-1 border-lightBorder">
               <Image
-                 src={assets.importImage}
+                src={assets.importImage}
                 alt="An example image"
                 width={20}
                 height={15}
