@@ -119,6 +119,7 @@ const page = () => {
             <DropDown
               options={dropDownOptions}
               defaultSelectedKeys={defaultDropDown}
+              selectStyles="w-[120px]"
             />
             <HeaderDropDown
               options={viewOptions}
@@ -240,12 +241,14 @@ const page = () => {
                     <DropDown
                       options={dropDownOptions}
                       defaultSelectedKeys={defaultDropDown}
+                      selectStyles="w-[120px]"
                     />
                   </TableCell>
                   <TableCell>
                     <DropDown
                       options={dropDownOptions}
                       defaultSelectedKeys={defaultDropDown}
+                       selectStyles="w-[120px]"
                     />
                   </TableCell>
                   <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import CommonHeader from "@/components/CommonHeader";
 import HeaderDropDown from "@/components/HeaderDropDown";
 import InputNoLabel from "@/components/InputNoLable";
@@ -100,10 +100,10 @@ const page = () => {
               mainStyles="bg-transparent border border-grayBorder rounded-[5px]"
             />
             <Button className="py-3 px-5 rounded-md bg-grayLight text-white">
-            삭제
+              삭제
             </Button>
             <Button className="py-3 px-5 rounded-md bg-mainBlack text-white">
-            추가
+              추가
             </Button>
           </div>
         </header>
@@ -137,7 +137,6 @@ const page = () => {
                 <Checkbox
                   onClick={() => {
                     if (allListCheckedPageNumbers.includes(page)) {
-                      // Uncheck all rows for this page
                       setAllListCheckedPageNumbers(
                         allListCheckedPageNumbers.filter(
                           (number) => number !== page
@@ -145,17 +144,16 @@ const page = () => {
                       );
                       setClickedRowIds(
                         clickedRowIds.filter(
-                          (id) =>
-                            !currentData
-                              .map((item: any) => item.round)
-                              .includes(id)
+                          (number) =>
+                            !items
+                              .map((item: any) => item.number)
+                              .includes(number)
                         )
                       );
                     } else {
-                      // Check all rows for this page
                       setClickedRowIds([
                         ...clickedRowIds,
-                        ...currentData.map((item: any) => item.round),
+                        ...items.map((item: any) => item.number),
                       ]);
                       setAllListCheckedPageNumbers([
                         ...allListCheckedPageNumbers,
@@ -170,15 +168,17 @@ const page = () => {
               <TableColumn className="truncate max-w-[80px]">번호</TableColumn>
               <TableColumn className="truncate max-w-[100px]">제목</TableColumn>
               <TableColumn className="truncate max-w-[120px]">내용</TableColumn>
-              <TableColumn className="truncate max-w-[150px]">예약 시간</TableColumn>
+              <TableColumn className="truncate max-w-[150px]">
+                예약 시간
+              </TableColumn>
               <TableColumn className="truncate max-w-[100px]">
-              상세보기
+                상세보기
               </TableColumn>
             </TableHeader>
             <TableBody>
               {items.map((row) => (
                 <TableRow key={row.number} className="border-b-1">
-                 <TableCell>
+                  <TableCell>
                     {/* Row Checkbox */}
                     <Checkbox
                       className="text-center size-[14px] rounded-[2px]"

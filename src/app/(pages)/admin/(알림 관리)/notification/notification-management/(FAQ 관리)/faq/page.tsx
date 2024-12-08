@@ -143,7 +143,6 @@ const page = () => {
                 <Checkbox
                   onClick={() => {
                     if (allListCheckedPageNumbers.includes(page)) {
-                      // Uncheck all rows for this page
                       setAllListCheckedPageNumbers(
                         allListCheckedPageNumbers.filter(
                           (number) => number !== page
@@ -151,17 +150,16 @@ const page = () => {
                       );
                       setClickedRowIds(
                         clickedRowIds.filter(
-                          (id) =>
-                            !currentData
-                              .map((item: any) => item.round)
-                              .includes(id)
+                          (number) =>
+                            !items
+                              .map((item: any) => item.number)
+                              .includes(number)
                         )
                       );
                     } else {
-                      // Check all rows for this page
                       setClickedRowIds([
                         ...clickedRowIds,
-                        ...currentData.map((item: any) => item.round),
+                        ...items.map((item: any) => item.number),
                       ]);
                       setAllListCheckedPageNumbers([
                         ...allListCheckedPageNumbers,

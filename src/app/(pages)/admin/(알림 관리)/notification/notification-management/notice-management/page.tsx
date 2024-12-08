@@ -188,20 +188,35 @@ const page = () => {
                   <TableCell>
                     {/* Row Checkbox */}
                     <Checkbox
-                      className="text-center size-[14px] rounded-[2px]"
-                      onClick={() => {
-                        if (clickedRowIds.includes(row.number)) {
-                          // Uncheck this row
-                          setClickedRowIds(
-                            clickedRowIds.filter((id) => id !== row.number)
-                          );
-                        } else {
-                          // Check this row
-                          setClickedRowIds([...clickedRowIds, row.number]);
-                        }
-                      }}
-                      isSelected={clickedRowIds.includes(row.number)}
-                    />
+                  onClick={() => {
+                    if (allListCheckedPageNumbers.includes(page)) {
+                      setAllListCheckedPageNumbers(
+                        allListCheckedPageNumbers.filter(
+                          (number) => number !== page
+                        )
+                      );
+                      setClickedRowIds(
+                        clickedRowIds.filter(
+                          (number) =>
+                            !items
+                              .map((item: any) => item.number)
+                              .includes(number)
+                        )
+                      );
+                    } else {
+                      setClickedRowIds([
+                        ...clickedRowIds,
+                        ...items.map((item: any) => item.number),
+                      ]);
+                      setAllListCheckedPageNumbers([
+                        ...allListCheckedPageNumbers,
+                        page,
+                      ]);
+                    }
+                  }}
+                  className="size-[14px] rounded-[2px] bg-transparent"
+                  isSelected={allListCheckedPageNumbers.includes(page)}
+                />
                   </TableCell>
                   <TableCell className="truncate max-w-[80px] overflow-hidden text-ellipsis whitespace-nowrap">
                     {row.number}
@@ -214,7 +229,10 @@ const page = () => {
                   </TableCell>
 
                   <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">
-                    <Link className="text-mainBlack" href="/admin/notification/notification-management/notice-management/1">
+                    <Link
+                      className="text-mainBlack"
+                      href="/admin/notification/notification-management/notice-management/1"
+                    >
                       {row.viewDetails}
                     </Link>
                   </TableCell>

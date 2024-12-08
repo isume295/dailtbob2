@@ -105,10 +105,10 @@ const page = () => {
               mainStyles="bg-transparent border border-grayBorder rounded-[5px]"
             />
             <Button className="py-3 px-5 rounded-md bg-grayLight text-white">
-            삭제
+              삭제
             </Button>
             <Button className="py-3 px-5 rounded-md bg-mainBlack text-white">
-            추가
+              추가
             </Button>
           </div>
         </header>
@@ -142,7 +142,6 @@ const page = () => {
                 <Checkbox
                   onClick={() => {
                     if (allListCheckedPageNumbers.includes(page)) {
-                      // Uncheck all rows for this page
                       setAllListCheckedPageNumbers(
                         allListCheckedPageNumbers.filter(
                           (number) => number !== page
@@ -150,17 +149,16 @@ const page = () => {
                       );
                       setClickedRowIds(
                         clickedRowIds.filter(
-                          (id) =>
-                            !currentData
-                              .map((item: any) => item.round)
-                              .includes(id)
+                          (number) =>
+                            !items
+                              .map((item: any) => item.number)
+                              .includes(number)
                         )
                       );
                     } else {
-                      // Check all rows for this page
                       setClickedRowIds([
                         ...clickedRowIds,
-                        ...currentData.map((item: any) => item.round),
+                        ...items.map((item: any) => item.number),
                       ]);
                       setAllListCheckedPageNumbers([
                         ...allListCheckedPageNumbers,
@@ -174,18 +172,14 @@ const page = () => {
               </TableColumn>
               <TableColumn className="truncate max-w-[80px]">번호</TableColumn>
               <TableColumn className="truncate max-w-[100px]">질문</TableColumn>
-              <TableColumn className="truncate max-w-[120px]">
-              날짜
-              </TableColumn>
+              <TableColumn className="truncate max-w-[120px]">날짜</TableColumn>
 
               <TableColumn className="truncate max-w-[100px]">
-              질문자
+                질문자
               </TableColumn>
+              <TableColumn className="truncate max-w-[100px]">상태</TableColumn>
               <TableColumn className="truncate max-w-[100px]">
-              상태
-              </TableColumn>
-              <TableColumn className="truncate max-w-[100px]">
-              상세보기
+                상세보기
               </TableColumn>
             </TableHeader>
             <TableBody>
