@@ -91,11 +91,6 @@ const page = () => {
         <header className="flex items-center justify-between">
           <p className="font-bold text-mainBlack">총 00건</p>
           <div className="flex items-center gap-3">
-            <DropDown
-              options={dropDownOptions}
-              defaultSelectedKeys={defaultDropDown}
-              selectStyles="w-[124px]"
-            />
             <HeaderDropDown
               options={viewOptions}
               defaultSelectedKey={viewOptionsDefault}
@@ -222,7 +217,7 @@ const page = () => {
                   <TableCell className="truncate max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap">
                     <Link
                       className="text-[#9388FE] underline underline-offset-1"
-                      href="/admin/notification/notification-management/1:1-inquiry-management/1"
+                      href="/admin/notification/1:1-inquiry-management/1"
                     >
                       {row.viewDetails}
                     </Link>

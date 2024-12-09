@@ -155,8 +155,9 @@ const page = () => {
             <Button className="py-3 px-5 rounded-md bg-grayLight text-white">
               삭제
             </Button>
-            <Button className="py-3 px-5 rounded-md bg-mainBlack text-white">
-              추가
+            <Button className="py-3 px-5 rounded-md bg-mainBlack text-white"> 
+              <Link className="text-white" href="/admin/game/game-management/1"> 추가</Link>
+             
             </Button>
           </div>
         </header>
@@ -197,16 +198,16 @@ const page = () => {
                       );
                       setClickedRowIds(
                         clickedRowIds.filter(
-                          (number) =>
-                            !items
+                          (id) =>
+                            !currentData
                               .map((item: any) => item.number)
-                              .includes(number)
+                              .includes(id)
                         )
                       );
                     } else {
                       setClickedRowIds([
                         ...clickedRowIds,
-                        ...items.map((item: any) => item.number),
+                        ...currentData.map((item: any) => item.number),
                       ]);
                       setAllListCheckedPageNumbers([
                         ...allListCheckedPageNumbers,
@@ -216,7 +217,7 @@ const page = () => {
                   }}
                   className="size-[14px] rounded-[2px] bg-transparent"
                   isSelected={allListCheckedPageNumbers.includes(page)}
-                />
+                ></Checkbox>
               </TableColumn>
               <TableColumn className="truncate max-w-[80px]">회차</TableColumn>
               <TableColumn className="truncate max-w-[100px]">상태</TableColumn>
@@ -248,17 +249,15 @@ const page = () => {
                       className="text-center size-[14px] rounded-[2px]"
                       onClick={() => {
                         if (clickedRowIds.includes(row.round)) {
-                          // Uncheck this row
                           setClickedRowIds(
                             clickedRowIds.filter((id) => id !== row.round)
                           );
                         } else {
-                          // Check this row
                           setClickedRowIds([...clickedRowIds, row.round]);
                         }
                       }}
                       isSelected={clickedRowIds.includes(row.round)}
-                    />
+                    ></Checkbox>
                   </TableCell>
                   <TableCell className="truncate max-w-[80px] overflow-hidden text-ellipsis whitespace-nowrap">
                     {row.round}

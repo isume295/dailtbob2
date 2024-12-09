@@ -125,6 +125,7 @@ const page = () => {
             <DropDown
               options={dropDownOptions}
               defaultSelectedKeys={defaultDropDown}
+              selectStyles="w-[120px]"
             />
             <HeaderDropDown
               options={viewOptions}
